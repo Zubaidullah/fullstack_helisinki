@@ -1,0 +1,12 @@
+sequenceDiagram
+  participant user as U
+  participant browser as B
+  participant server as S
+
+  U->>B: Enters text into the text field
+  Note over B: User interacts with the web page
+  U->>B: Clicks the Save button
+  B->>S: HTTP POST request to create a new note
+  Note over S: Server processes the request
+  S-->>B: HTTP Response for note creation
+  B-->>U: Displays success message or updates the page
