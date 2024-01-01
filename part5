@@ -1,0 +1,11 @@
+sequenceDiagram
+  participant user as U
+  participant browser as B
+  participant SPA as S
+
+
+  B->>S: Requests the SPA page
+  S->>S: Loads the SPA JavaScript
+  Note over S: SPA handles routing
+  S-->>B: render SPA page
+  B-->>U: Displays the SPA interface
