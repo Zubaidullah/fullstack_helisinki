@@ -1,0 +1,14 @@
+sequenceDiagram
+  participant user as U
+  participant browser as B
+  participant SPA as S
+  participant server as SV
+
+
+  S->>S: Generates new note locally
+  S->>SV: HTTP POST request to create a note
+  Note over SV: Server processes the request
+  SV-->>S: HTTP Response for note creation
+  Note over S: SPA updates UI with new note
+  S-->>B: update the SPA page
+  B-->>U: Displays SPA with new note
